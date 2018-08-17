@@ -1,8 +1,14 @@
 """
-Need to run the below commands in python terminal/console to initialize the SQLite databse
+Create table in mysql database using below query
+create table user(
+	id integer auto_increment primary key,
+	name varchar(80),
+	email varchar(120)
+);
 
-from crud import db
-db.create_all()
+Database Name : flask_tutorial
+User Name : flask_tutorial
+Password : flask_tutorial
 
 
 """
@@ -13,12 +19,16 @@ import os
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'flask_tutorial.sqlite')
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://flask_tutorial:flask_tutorial@localhost/flask_tutorial'
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
 
 class User(db.Model):
+    __tablename__ = 'user'
+
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True)
     email = db.Column(db.String(120), unique=True)
