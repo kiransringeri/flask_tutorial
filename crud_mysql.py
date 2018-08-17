@@ -1,4 +1,6 @@
 """
+CRUD application to manage users - list/add/edit/delete users. Uses MySQL database
+
 Create table in mysql database using below query
 create table user(
 	id integer auto_increment primary key,

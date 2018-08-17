@@ -1,3 +1,6 @@
+"""
+Simple server which prints "Hello World" to browser
+"""
 from flask import Flask
 
 app = Flask(__name__)

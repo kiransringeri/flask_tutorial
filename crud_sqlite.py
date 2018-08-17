@@ -1,4 +1,7 @@
 """
+CRUD application to manage users - list/add/edit/delete users. Uses MySQL database
+
+
 Need to run the below commands in python terminal/console to initialize the SQLite databse
 
 from crud import db
